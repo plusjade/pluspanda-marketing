@@ -1,0 +1,243 @@
+@import "global.sass"
+
+// #### INDIVIDUAL PAGES ### 
+
+// home
+//--------------------------------
+
+h2.home-header
+  clear: both
+  margin-bottom: 25px
+  text-align: center
+  line-height: 1.4em
+  span
+    font-style: italic
+
+.home-main-text
+  margin-bottom: 35px
+  text-align: center
+  font-style: italic
+  color: #555
+
+.home-intro
+  margin: 10px 20px
+  padding-bottom: 30px
+  overflow: auto
+  background: white url('/images/homepage-arrow.png') no-repeat 93% 84%
+
+.main-steps
+  margin: auto
+  width: 490px
+  h4
+    padding: 10px
+    margin: 0 30px
+    background: #eee
+    color: #999
+    -moz-border-radius: 7px
+    -webkit-border-radius: 7px
+    font-size: 16px
+    &.active
+      margin: 0
+      background: #0099ff
+      //    background:#ffff99 rl('/images/common/gradients.jpg') repeat-x 0px -205px;
+      order: 1px dashed #ff7676
+      color: #fff
+      text-align: center
+  div
+    padding: 5px
+    margin: 5px 30px
+    margin-bottom: 15px
+    color: #999
+    line-height: 1.5em
+    &.active
+      color: #333
+      margin: 5px
+      text-align: center
+
+.home-intro
+  .pane-screenshot
+    width: 460px
+    float: right
+    line-height: 1.5em
+    ul
+      margin: 0
+      li
+        margin-bottom: 6px
+  .pane-text
+    width: 420px
+    float: left
+    text-align: center
+    h4
+      color: #333
+      text-align: center
+    div
+      text-align: left
+      height: 130px
+      padding: 0 25px
+      padding-top: 10px
+      padding-bottom: 20px
+      background: white url('/images/shadow-y.png') no-repeat 50% 100%
+
+a
+  &#signup
+    display: block
+    width: 231px
+    height: 63px
+    margin: 0 auto
+    background: white url('/images/signup-button.jpg') no-repeat 0 0
+    &:hover
+      background-position: 0 -63px
+  &.layout
+    display: block
+    width: 231px
+    height: 63px
+    background: white url('/images/layout-button.gif') no-repeat 0 0
+    &:hover
+      background-position: 0 -62px
+  &#demo
+    display: block
+    width: 229px
+    height: 62px
+    margin: 0 auto
+    background: white url('/images/demo-button.jpg') no-repeat 0 0
+    &:hover
+      background-position: 0 -62px
+
+.demo-widget
+  clear: both
+  padding: 20px
+  padding-top: 0
+  overflow: auto
+
+.demo-text
+  width: 40%
+  line-height: 1.5em
+  &.left
+    float: left
+    margin-left: 60px
+  &.right
+    float: right
+    margin-right: 60px
+  h6
+    padding-left: 20px
+    background: white url('/images/check.gif') no-repeat 0% 50%
+  div
+    margin-left: 20px
+    margin-bottom: 10px
+
+// start page
+//--------------------------------
+
+.signup-wrapper
+  float: left
+  width: 60%
+  margin-left: 70px
+  margin-top: 50px
+  line-height: 1.6em
+  .hurry
+    font-weight: bold
+    text-align: center
+    span
+      background: #ffff99
+      text-decoration: underline
+
+#signup-form
+  padding: 10px
+  background: #ffff99
+  border: 2px solid #ffcc33
+  overflow: auto
+  -moz-border-radius: 10px
+  -webkit-border-radius: 10px
+  input
+    width: 200px
+    border: 1px solid #333
+    background: #fff
+  fieldset
+    float: left
+    margin: 0 15px
+  .panda-email, .panda-password, .panda-password2
+
+.twitter-action
+  margin: 30px 0 50px 0
+  text-align: center
+  img
+    display: block
+    margin: 20px auto
+
+.left-copy
+  float: right
+  width: 175px
+  margin-right: 50px
+
+
+// faq page
+//--------------------------------
+
+.faq-page
+  margin: 0 70px
+  div
+    line-height: 1.6em
+    margin: 5px 30px
+
+//contact page 
+//--------------------------------
+
+#twitter, #jade, #ben, #location
+  width: 750px
+  margin: 0 auto
+  margin-bottom: 80px
+  overflow: auto
+
+// tos page 
+//--------------------------------
+
+.tos-page
+  margin: 0 70px
+  div, p
+    line-height: 1.6em
+    margin: 5px 30px
+  li
+    margin-bottom: 5px
+    line-height: 1.6em
+    &.important
+      padding: 5px
+      background: #ffffcc
+      border: 1px solid orange
+
+#twitter
+  div.contact-text
+    width: 365px
+    text-align: right
+  img
+    float: right
+    margin-right: 160px
+
+#jade
+  div.contact-text
+    width: 365px
+    height: 305px
+    text-align: right
+    background: white url('/images/tree.png') no-repeat bottom right
+  img
+    float: right
+    border: 4px solid #eee
+
+#ben
+  div.contact-text
+    width: 365px
+    height: 290px
+    text-align: right
+    background: white url('/images/tree.png') no-repeat bottom right
+  img
+    float: right
+    border: 4px solid #eee
+    margin-right: 180px
+
+#location
+  div.contact-text
+    width: 365px
+    text-align: right
+  img
+    float: right
+    border: 4px solid #eee
+    margin-right: 10px
