@@ -59,9 +59,3 @@ get '/privacy_policy' do
   @content = erb :privacy_policy
   erb :template
 end   
-
-
-after do
-  #erb :template
-  #puts 'afer hook completed'
-end
