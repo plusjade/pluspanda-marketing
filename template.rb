@@ -59,3 +59,10 @@ get '/privacy_policy' do
   @content = erb :privacy_policy
   erb :template
 end   
+
+not_found do
+  @meta   = '404 Not Found'
+  @title  = '404 Not Found!'
+  @content = erb :error_404
+  erb :template
+end
