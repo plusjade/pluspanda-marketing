@@ -3,17 +3,24 @@ require 'sinatra'
 require 'erb'
 
 before do
-  api_site = "http://api.pluspanda.com"
+  @api_site = "http://api.pluspanda.com"
   if !params[:apikey].nil?
     # redirect to new api method.
     # TODO: log referrer so we know who's still using the old api.
-    redirect api_site + "/testimonials/widget.js?" + request.query_string
+    redirect @api_site + "/testimonials/widget.js?" + request.query_string
   end
   
   @links = ['home', 'pricing', 'faq', 'contact']
   @active ||= request.path_info.split('/')[1]
-  @admin_action_url = api_site + "/admin"
-  @admin_homepage_url = api_site + "/admin"
+  @admin_action_url = @api_site + "/admin"
+  @admin_homepage_url = @api_site + "/admin"
+end
+
+# redirect the add link: 
+  # http://pluspanda.com/testimonials/add/cI7eHawz
+  # http://localhost:3000/testimonials/new?apikey=577ed4ada1f60e44
+get '/testmionials/add/:apikey'
+  redirect @api_site + "/testimonials/new?apikey=" + params[:apikey]
 end
 
 ['/', '/home'].each do |path|
