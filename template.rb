@@ -19,7 +19,7 @@ end
 # redirect the add link: 
   # http://pluspanda.com/testimonials/add/cI7eHawz
   # http://localhost:3000/testimonials/new?apikey=577ed4ada1f60e44
-get '/testmionials/add/:apikey'
+get '/testmionials/add/:apikey' do
   redirect @api_site + "/testimonials/new?apikey=" + params[:apikey]
 end
 
