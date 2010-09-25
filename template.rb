@@ -7,6 +7,7 @@ before do
   if !params[:apikey].nil?
     # redirect to new api method.
     # TODO: log referrer so we know who's still using the old api.
+    content_type "text/javascript"
     redirect @api_site + "/testimonials/widget.js?" + request.query_string
   end
   
