@@ -11,7 +11,7 @@ before do
     redirect @api_site + "/testimonials/widget.js?" + request.query_string
   end
   
-  @links = ['home', 'pricing', 'faq', 'contact']
+  @links = ['home', 'pricing', 'faq', 'contact', 'activity']
   @active ||= request.path_info.split('/')[1]
   @admin_action_url = @api_site + "/admin"
   @admin_homepage_url = @api_site + "/admin"
@@ -56,6 +56,25 @@ get '/contact' do
   @meta   = 'Pluspanda website testimonials builder contact information'
   @title  = 'Contact me'
   @content = erb :contact
+  erb :template
+end
+
+
+get '/activity' do
+  @meta   = ''
+  @title  = 'Development Activity'
+  
+  require 'net/http'
+  require 'uri'
+  require 'json'
+  
+  url = URI.parse('http://github.com/api/v2/json/commits/list/plusjade/pluspanda/master')
+     res = Net::HTTP.start(url.host, url.port) {|http|
+       http.get('/api/v2/json/commits/list/plusjade/pluspanda/master')
+     }
+  @github = JSON.parse(res.body)
+
+  @content = erb :activity
   erb :template
 end
 
