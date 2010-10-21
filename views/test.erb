@@ -1,0 +1,65 @@
+
+
+
+<link href="http://localhost:3000/system/data/577ed4ada1f60e44/list.css?r=0.9526134592015296" media="screen" rel="stylesheet" type="text/css" /> 
+
+<div id="plusPandaYes">
+
+  <div id="pluspanda-testimonials">
+    <div class="panda-header">
+      <div class="title">
+        <div class="lft"></div>
+        <div class="mdl">
+          <h2>Testimonials</h2>
+          <ul class="switcher">
+            <li class="grid"><a href="#grid">G-View</a></li>
+            <li class="list current"><a href="#list">L-View</a></li>
+          </ul>
+        </div>
+        <div class="rgt"></div>
+      </div>
+      <div class="panda-tags">
+        <span>Show Testimonials from: </span>
+        <%#= tag_list %>
+      </div>
+      <div class="panda-avg-rating">
+        <span>(Total: <b><%= @data["total"] %></b>)</span>
+        <span class="panda-rating-stars s<%= @data["average"].ceil %>" title="Average rating: <%= @data["average"].to_s %>/5 stars ">****</span>
+      </div>
+    </div>
+
+    <div class="panda-container list">
+      
+
+      <% @testimonials.each do |t| %>
+      <div id="t-<%= t["id"] %>" class="t-single">
+        <div class="image">
+          <img height="148" width="148" src="<%= t["image_src"] ?  t["image_src"] :  t["image_stock"]  %>" alt="" />
+        </div>
+        <div class="content">
+          <span class="arrow"></span>
+          <div class="head">
+            <div class="t-rating">
+              <span class="panda-rating-stars s<%= t["rating"] %>" title="Rating: <%= t["rating"] %> stars"></span>
+            </div>
+            <div class="t-details-meta">
+              <span class="t-name"><%= t["name"] %>,</span>
+              <span class="t-position"><%= t["c_position"] %>, <%= t["company"] %></span>
+              <a href="<%= t["url"] %>" class="t-website" target="_blank"><%= t["url"] %></a>
+            </div>
+          </div>
+          <div class="t-text">
+            <span class="p1"></span>
+            <p><%= t["body"] %></p>
+          </div>
+        </div>
+      </div>  
+
+      <% end %>
+      
+    </div>
+  </div>
+  
+
+
+</div>
